@@ -61,6 +61,9 @@ h1 em { color: var(--accent); font-style: normal; }
 .book-hanja { font-family: var(--serif); font-size: 54px; letter-spacing: 10px; padding-left: 10px; line-height: 1.5; margin-top: 5px; }
 .pronounce { color: var(--accent); font-size: 13px; letter-spacing: 5px; }
 .book-meaning { font-size: 15px; margin-top: 12px; }
+.book-explanation { border-top: 1px solid var(--line); margin-top: 18px; padding-top: 16px; text-align: left; }
+.book-explanation strong { font-size: 13px; font-weight: 600; color: var(--accent); }
+.book-explanation p { font-size: 12px; line-height: 1.9; color: var(--muted); margin-top: 7px; }
 .book-characters { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); margin-top: 22px; padding-top: 17px; }
 .book-characters > span { font-family: var(--serif); font-size: 23px; }
 .book-characters > span + span { border-left: 1px solid var(--line); }
@@ -75,6 +78,13 @@ h1 em { color: var(--accent); font-style: normal; }
 .intro-items span { color: var(--accent); font-family: var(--serif); font-style: italic; font-size: 18px; margin-right: 18px; }
 .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 40px; }
 .section-description { color: var(--muted); font-size: 14px; line-height: 1.9; padding-bottom: 6px; }
+.explanation-preview { margin-top: 40px; padding: 32px; display: grid; grid-template-columns: 1fr 2fr; gap: 45px; border-block: 1px solid var(--line); background: var(--surface); }
+.explanation-intro h3 { font: 28px/1.6 var(--serif); margin-top: 20px; letter-spacing: -1px; }
+.explanation-intro > p:last-child { font-size: 12px; color: var(--muted); margin-top: 16px; }
+.explanation-body h4 { font-size: 16px; font-weight: 600; margin: 0 0 10px; }
+.explanation-body h4:not(:first-child) { margin-top: 24px; }
+.explanation-body p { font-size: 14px; line-height: 2; color: #616555; margin: 0; }
+.explanation-body .excerpt-note { font-size: 11px; color: var(--muted); border-top: 1px solid var(--line); margin-top: 23px; padding-top: 14px; }
 .story-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 27px; margin-top: 44px; }
 .story-image { position: relative; overflow: hidden; }
 .story-image img { width: 100%; aspect-ratio: 1.5; object-fit: cover; transition: transform .5s; }
@@ -202,6 +212,10 @@ details > p { color: var(--muted); padding: 0 26px 23px 0; font-size: 13px; line
   h2 { font-size: 31px; letter-spacing: -1.3px; }
   .eyebrow { font-size: 9px; letter-spacing: 1.6px; }
   .section-description { margin-top: 22px; font-size: 13px; }
+  .explanation-preview { grid-template-columns: 1fr; gap: 25px; padding: 24px 20px; margin-top: 30px; }
+  .explanation-intro h3 { font-size: 26px; margin-top: 12px; }
+  .explanation-body h4 { font-size: 15px; }
+  .explanation-body p { font-size: 13px; }
   .story-grid { grid-template-columns: 1fr; gap: 35px; margin-top: 32px; }
   .story-image img { aspect-ratio: 16/9; }
   .story figcaption { padding-top: 15px; }
