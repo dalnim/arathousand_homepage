@@ -4,6 +4,7 @@ const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#main-nav');
 
 function closeMenu() {
+  if (!navigation.classList.contains('is-open')) return;
   navigation.classList.remove('is-open');
   menuButton.setAttribute('aria-expanded', 'false');
   menuButton.setAttribute('aria-label', '메뉴 열기');
@@ -34,6 +35,7 @@ window.matchMedia('(max-width: 760px)').addEventListener('change', closeMenu);
 
 const answers = document.querySelectorAll('[data-answer]');
 const feedback = document.querySelector('#quiz-feedback');
+const initialFeedback = feedback.textContent;
 const resetButton = document.querySelector('.quiz-reset');
 
 answers.forEach((answer) => {
@@ -55,7 +57,7 @@ resetButton.addEventListener('click', () => {
     answer.disabled = false;
     answer.classList.remove('correct', 'incorrect');
   });
-  feedback.textContent = '정답이라고 생각하는 보기를 골라 보세요.';
+  feedback.textContent = initialFeedback;
   resetButton.hidden = true;
   answers[0].focus({ preventScroll: true });
 });
@@ -63,6 +65,9 @@ resetButton.addEventListener('click', () => {
 document.querySelector('#year').textContent = new Date().getFullYear();
 
 const characterButtons = document.querySelectorAll('[data-character]');
+const detailHanja = document.querySelector('#detail-hanja');
+const detailTitle = document.querySelector('#detail-title');
+const detailDescription = document.querySelector('#detail-description');
 const characterDetails = {
   sky: ['天', '하늘 천', '천지현황의 첫 글자예요. 우리 위로 넓게 펼쳐진 하늘을 뜻해요.'],
   earth: ['地', '땅 지', '우리가 발을 딛고 살아가는 땅을 뜻해요. 하늘 천(天)과 함께 천지(天地), 하늘과 땅을 이뤄요.'],
@@ -74,8 +79,8 @@ characterButtons.forEach((button) => {
   button.addEventListener('click', () => {
     characterButtons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
     const [character, title, description] = characterDetails[button.dataset.character];
-    document.querySelector('#detail-hanja').textContent = character;
-    document.querySelector('#detail-title').textContent = title;
-    document.querySelector('#detail-description').textContent = description;
+    detailHanja.textContent = character;
+    detailTitle.textContent = title;
+    detailDescription.textContent = description;
   });
 });
